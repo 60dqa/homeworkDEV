@@ -120,7 +120,6 @@
 
 // foundSumAndCount();
 
-//-------------------------------------------------------------------------------------------------------------
 
 //2.Проверить простое ли число? (число называется простым, если оно делится только само на себя и на 1)
     // function simlpeNum(n){
@@ -140,16 +139,51 @@
 
    /* 3.Найти корень натурального числа с точностью до целого (рассмотреть вариант последовательного 
     подбора и метод бинарного поиска)*/
-    // не пойму Зачем использовать подборы и методы поиска и цыкл ??????
     // function sqrtOfNum(num) {
     //     var resultNum = Math.sqrt(num);
     //     console.log(Math.floor(resultNum));
     // }
+    //бинарный
+    /*function binary(num) {
+        var res = 0;
+        var low = 0;
+        var high = num;
+        while(low <= high){
+            var mid=(low + high) / 2;
+            mid = Math.floor(mid);
+            if(mid * mid == num){
+                return mid;
+            }
+            if(mid * mid < num){
+                low = mid + 1;
+                res = mid;
+            }
+            else{
+                high = mid-1;
+            }
+        }
+        return res;
+    }
+    
+    console.log(binary(36));*/
     
     // sqrtOfNum(22);
 
-    //4. Посчитать сумму цифр заданного числа
-     function sumNumber(num) {
+    /* 4 Вычислить факториал числа n. n! = 1*2*…*n-1*n; */
+
+    /*function Factorial(n) {
+        var factorial = 1;
+        for (var i = 1; i <= n; i++) {
+            factorial *= i;
+        }
+        return factorial;
+        
+    }
+
+    console.log(Factorial(3));*/
+
+    //5. Посчитать сумму цифр заданного числа
+    /* function sumNumber(num) {
              var sum = 0; 
              var tmp = null;
              while (num) {
@@ -160,9 +194,9 @@
              console.log(sum);
          }
         
-         sumNumber(123);
+         sumNumber(123);*/
 
-    //5.Вывести число, которое является зеркальным отображением
+    //6.Вывести число, которое является зеркальным отображением
     // последовательности цифр заданного числа, например, задано число 123, вывести 321.
          
     
@@ -207,12 +241,119 @@
 
     //  var arr = [6,241,21,58];
     //  var min = arr[0];
-    //  for(var i=0; i<arr.length; i++){
+    //  for(var i=0; i < arr.length; i++){
     //      if(arr[i] < min) {
     //          min = arr[i];
     //      }
     //  }
     //  console.log(arr.indexOf(min));
  
+   /* 5 Посчитать сумму элементов массива с нечетными индексами */
+         /*var arr = [6,241,21,58,32,233,2312,68];
+         var sum= 0;
+         for(var i = 0; i < arr.length; i++) {
+           if(i % 2 !== 0){
+                sum += arr[i];
+             }
+         }
+         console.log(sum);*/
+
+
+    /*6 Сделать реверс массива (массив в обратном направлении)*/
+        /*var arr = [6,241,21,58,32,233,2312,68];
+        var tmp = 0;
+        
+        for (var i = 0; i < arr.length / 2; i++) {
+            tmp = arr[i];
+            arr[i] = arr[arr.length - 1 - i];
+            arr[arr.length - 1 - i] = tmp;
+        }
+        console.log(arr);*/
+        
+
+
+
+
+   /* 7 Посчитать количество нечетных элементов массива*/
+   /*var arr = [6,241,21,58,32,233,2312,68,71,21,21,21];
+   var count = 0;
+   for(var i = 0; i < arr.length; i++) {
+       if (arr[i] % 2 !== 0){
+           count ++;
+       }
+   }
+   console.log(count);*/
+
+    /*8 Поменять местами первую и вторую половину массива, например, для массива */
+
+    /*var arr = [6,241,21,58]; 
+    var newArr = [firstHalf,secondHalf];
+    var firstHalf = [];
+    var secondHalf = [];
+
+    for(var i = 0; i < arr.length / 2; i++) {
+        firstHalf[i] = arr[i];
+        
+    }
+    console.log(newArr);*/ 
+    //не верно
+
+    /*Отсортировать массив (пузырьком (Bubble), выбором (Select), вставками (Insert))*/
+
+/*----------------------------------Функции---------------------------------------*/
+    /*Получить строковое название дня недели по номеру дня. */
+
+    /*function getDay(num) {
+        switch (num){
+            case 1: 
+            console.log("Monday");
+            break;
+            case 2: 
+            console.log("Tuesday");
+            break;
+            case 3: 
+            console.log("Wednesday");
+            break;
+            case 4: 
+            console.log("thursday");
+            break;
+            case 5: 
+            console.log("Friday");
+            break;
+            case 6: 
+            console.log("Suturday");
+            break;
+            case 7: 
+            console.log("Sunday");
+            break;
+            default:
+                console.log("faQday");
+        }
+        return num;
+    }
+
+    console.log(getDay(7));*/
+
+
+    /*Найти расстояние между двумя точками в двухмерном декартовом пространстве.*/
+    /*function decart(firstDot, secondDot) {
+        return Math.sqrt( ((secondDot.x - firstDot.x) ** 2) + ((secondDot.y - firstDot.y) ** 2) );
+    }
+    console.log(decart({x:-1, y:3}, {x: 4, y: 7}));*/
+
+
+
+    /*Вводим число(0-999), получаем строку с прописью числа.*/
+
+    
+    function stingNum(num){
+
+    }
+
+
+
+    /*Вводим строку, которая содержит число, написанное прописью (0-999). Получить само число*/
+
+
 
      

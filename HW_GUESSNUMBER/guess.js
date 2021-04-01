@@ -47,6 +47,7 @@ button.onclick = function(){
 
 
 buttonGenerate.onclick = function() {
+
     inputMin = Number(inputMin.value);
     inputMax = Number(inputMax.value);
     inputAtempts = Number(inputAtempts.value);
@@ -54,7 +55,14 @@ buttonGenerate.onclick = function() {
     console.log(randomNumber);
     guess.innerHTML = `Ты выбрал диапазон от ${inputMin} до  ${inputMax} 
     с количеством попыток - ${inputAtempts},попробуй угадать мое число))`;
-    guess.appendChild(page2);
+    if (isValid(inputMin,inputMax,inputAtempts)){
+        guess.innerHTML = `Ты выбрал диапазон от ${inputMin} до  ${inputMax} 
+    с количеством попыток - ${inputAtempts},попробуй угадать мое число))`;
+        guess.appendChild(page2);
+    } else {
+        guess.innerHTML = `go home`;
+    }
+    
     
 };
 var randomNumber = 0;
@@ -65,11 +73,31 @@ function getRandom(min, max) {
 
 buttonStart.addEventListener('click' ,  function() {
     inputAtempts--;
-    inputPage2 = Number(inputPage2.value);
-    console.log(inputPage2);
-    // if (randomNumber === inputPage2){
-    //     console.log('Y WIN');
-    // } else  {
-    //     console.log('LOKS');
-    // }
-})
+    var userNumber = Number(inputPage2.value);
+    console.log(userNumber);
+    if (inputAtempts !== 0) {
+        if (randomNumber === inputPage2){
+            console.log('Y WIN');
+        }
+         else  {
+            console.log('LOKS');
+        }
+    }else {
+        guess.innerHTML = 'bay bay';
+    }
+
+
+    
+});
+
+function isValid(num1, num2, num3) {
+    if (num1 < 1 ||num1 >= 200 ||
+      num2 > 200 ||num2 < 1 ||
+      num1 >= num2 ||
+      num3 < 1 ||num3 > 15  ) {
+      return false;
+    } else if (num1 % 1 != 0 || num2 % 1 != 0 || num3 % 1 != 0) {
+      return false;
+    }
+    return true;
+  }

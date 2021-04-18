@@ -72,4 +72,3 @@ console.log(stars(7,7));*/
 
 //5
 
-
